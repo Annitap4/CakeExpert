@@ -13,15 +13,21 @@ import javax.swing.event.EventListenerList;
 public class BreadPnl extends JPanel {
 
 	private EventListenerList eventListenerList = new EventListenerList();
+	private JPanel breadPnl;
+	private BreadAskPnl breadAskPnl;
+
 
 	public BreadPnl() {
 		initGUI();
 	}
 
 	private void initGUI() {
-
-		setLayout(new GridBagLayout());
 		setBackground(new Color(252, 243, 218));
+		
+		breadPnl = new JPanel();
+		breadPnl.setLayout(new GridBagLayout());
+		breadPnl.setBackground(new Color(252, 243, 218));
+		breadPnl.setVisible(true);
 		GridBagConstraints gbc;
 
 		String ingredients;
@@ -52,7 +58,7 @@ public class BreadPnl extends JPanel {
 		gbc.insets = new Insets(1, 1, 1, 1); // Espacios que reserva el
 												// componente entre el borde del
 												// objeto y la celda
-		add(ingredientsTxt, gbc);
+		breadPnl.add(ingredientsTxt, gbc);
 
 		String procedure;
 		procedure = "Preparación:\n" +
@@ -78,7 +84,7 @@ public class BreadPnl extends JPanel {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.fill = GridBagConstraints.NONE;
 		gbc.insets = new Insets(1, 1, 1, 1);
-		add(procedureTxt, gbc);
+		breadPnl.add(procedureTxt, gbc);
 
 		JButton btnBack = new JButton("Volver");
 		btnBack.addActionListener(new ActionListener() {
@@ -96,9 +102,14 @@ public class BreadPnl extends JPanel {
 		gbc.anchor = GridBagConstraints.CENTER;
 		gbc.fill = GridBagConstraints.NONE;
 		gbc.insets = new Insets(1, 1, 1, 1);
-		add(btnBack, gbc);
+		breadPnl.add(btnBack, gbc);
 		
 		JButton btnHelp = new JButton("¿Que hacer si...?");
+		btnHelp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnHelpClicked();
+			}
+		});
 		gbc = new GridBagConstraints();
 		gbc.gridx = 0;
 		gbc.gridy = 2;
@@ -109,7 +120,19 @@ public class BreadPnl extends JPanel {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.fill = GridBagConstraints.NONE;
 		gbc.insets = new Insets(1, 1, 1, 1);
-		add(btnHelp, gbc);
+		breadPnl.add(btnHelp, gbc);
+		add(breadPnl);
+		
+		breadAskPnl = new BreadAskPnl();
+		breadAskPnl.setVisible(false);
+		add(breadAskPnl);
+		
+	}
+
+	private void btnHelpClicked() {
+		breadPnl.setVisible(false);
+		breadAskPnl.setVisible(true);
+		repaint();
 	}
 
 	private void btnBackClicked() {

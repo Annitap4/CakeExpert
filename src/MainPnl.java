@@ -31,17 +31,15 @@ public class MainPnl extends JPanel {
 		txtLbl.setPreferredSize(new Dimension(800, 100));
 		txtLbl.setAlignmentX(CENTER_ALIGNMENT);
 		gbc = new GridBagConstraints();
-		gbc.gridx = 0; // Coordenada x en el grid
-		gbc.gridy = 0; // Coordenada y en el grid
-		gbc.gridwidth = 3; // Cantidad de celdas de ancho
-		gbc.gridheight = 1; // Cantidad de celdas de alto
-		gbc.weightx = 0; // Peso de la celda en horizontal
-		gbc.weighty = 0; // Peso de la celda enla vertical
-		gbc.anchor = GridBagConstraints.CENTER; // Ancla relativa a la celda
-		gbc.fill = GridBagConstraints.NONE; // Como usa el espacio disponible
-		gbc.insets = new Insets(1, 1, 1, 1); // Espacios que reserva el
-												// componente entre el borde del
-												// objeto y la celda
+		gbc.gridx = 0; 
+		gbc.gridy = 0; 
+		gbc.gridwidth = 3; 
+		gbc.gridheight = 1;
+		gbc.weightx = 0; 
+		gbc.weighty = 0; 
+		gbc.anchor = GridBagConstraints.CENTER; 
+		gbc.fill = GridBagConstraints.NONE; 
+		gbc.insets = new Insets(1, 1, 1, 1);
 		add(txtLbl, gbc);
 
 		JButton btnBread = new JButton("Torta de Pan", new ImageIcon(getClass()

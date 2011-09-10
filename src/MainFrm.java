@@ -25,7 +25,6 @@ public class MainFrm extends JFrame {
 		setTitle("Cake Expert");
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(1000, 600);
 		setResizable(true);
 		setVisible(true);
 		
@@ -48,6 +47,8 @@ public class MainFrm extends JFrame {
 		add(bottom, BorderLayout.SOUTH);
 		setIconImage(new ImageIcon(getClass().getResource("/images/cake.png"))
 				.getImage());
+		
+		setSize(1000, 600);
 
 	}
 
