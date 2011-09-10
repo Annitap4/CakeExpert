@@ -12,6 +12,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
+import sun.awt.RepaintArea;
+
 public class MainFrm extends JFrame {
 
 	public TopBarPnl topBar;
@@ -24,17 +26,16 @@ public class MainFrm extends JFrame {
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(1000, 600);
-		setResizable(false);
+		setResizable(true);
 		setVisible(true);
 		
 		menus();
-		//ImageLoader.run();
-
+		
 		topBar = new TopBarPnl();
 		topBar.setPreferredSize(new Dimension(80, 100));
 		topBar.setVisible(true);
 		add(topBar, BorderLayout.NORTH);
-
+		
 		center = new CenterPnl();
 		center.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -42,13 +43,12 @@ public class MainFrm extends JFrame {
 			}
 		});
 		add(center, BorderLayout.CENTER);
-
+		
 		bottom = new BottomPnl();
 		add(bottom, BorderLayout.SOUTH);
-		
 		setIconImage(new ImageIcon(getClass().getResource("/images/cake.png"))
 				.getImage());
-		
+
 	}
 
 	private void pnlCenterClicked(ActionEvent evt) {

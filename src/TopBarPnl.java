@@ -28,40 +28,41 @@ public class TopBarPnl extends JPanel {
 		g2d.fillRect(4, 4, getWidth() - 8, getHeight() - 8);
 		switch (cake) {
 		case Welcome:
-			cakeImg = new ImageIcon(getClass().getResource("images/cake.png"));
+			cakeImg = new ImageIcon(getClass().getResource("/images/cake.png"));
 			textImg = new ImageIcon(getClass().getResource(
 					"images/welcomeTxt.png"));
 			break;
 		case Bread:
-			cakeImg = new ImageIcon(getClass().getResource("images/bread.png"));
+			cakeImg = new ImageIcon(getClass().getResource("/images/bread.png"));
 			textImg = new ImageIcon(getClass().getResource(
 					"images/breadTxt.png"));
 			break;
 		case ThreeMilk:
-			cakeImg = new ImageIcon(getClass().getResource("images/3Milk.png"));
+			cakeImg = new ImageIcon(getClass().getResource("/images/3Milk.png"));
 			textImg = new ImageIcon(getClass().getResource(
-					"images/threeMilkTxt.png"));
+					"/images/threeMilkTxt.png"));
 			break;
 		case Chocolate:
-			cakeImg = new ImageIcon(getClass().getResource("images/chocolate.png"));
-			textImg = new ImageIcon(getClass().getResource("images/chocolateTxt.png"));
+			cakeImg = new ImageIcon(getClass().getResource("/images/chocolate.png"));
+			textImg = new ImageIcon(getClass().getResource("/images/chocolateTxt.png"));
 			break;
 		case Homemade:
-			cakeImg = new ImageIcon(getClass().getResource("images/homemade.png"));
-			textImg = new ImageIcon(getClass().getResource("images/homemadeTxt.png"));
+			cakeImg = new ImageIcon(getClass().getResource("/images/homemade.png"));
+			textImg = new ImageIcon(getClass().getResource("/images/homemadeTxt.png"));
 			break;
 		case Pumpkin:
-			cakeImg = new ImageIcon(getClass().getResource("images/pumpkin.png"));
-			textImg = new ImageIcon(getClass().getResource("images/pumpkinTxt.png"));
+			cakeImg = new ImageIcon(getClass().getResource("/images/pumpkin.png"));
+			textImg = new ImageIcon(getClass().getResource("/images/pumpkinTxt.png"));
 			break;
 		case Pineapple:
-			cakeImg = new ImageIcon(getClass().getResource("images/pineapple.png"));
-			textImg = new ImageIcon(getClass().getResource("images/pineappleTxt.png"));
+			cakeImg = new ImageIcon(getClass().getResource("/images/pineapple.png"));
+			textImg = new ImageIcon(getClass().getResource("/images/pineappleTxt.png"));
+			repaint();
 			break;
 		default:
-			cakeImg = new ImageIcon(getClass().getResource("images/cake.png"));
+			cakeImg = new ImageIcon(getClass().getResource("/images/cake.png"));
 			textImg = new ImageIcon(getClass().getResource(
-					"images/welcomeTxt.png"));
+					"/images/welcomeTxt.png"));
 			break;
 		}
 		g2d.drawImage(cakeImg.getImage(), 1, 5, null);
