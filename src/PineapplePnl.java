@@ -1,11 +1,14 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.event.EventListenerList;
@@ -13,6 +16,8 @@ import javax.swing.event.EventListenerList;
 
 public class PineapplePnl extends JPanel {
 	private EventListenerList eventListenerList = new EventListenerList();
+	private JPanel pineapplePnl;
+	private PineappleAskPnl pineappleAskPnl;
 
 	public PineapplePnl() {
 		initGUI();
@@ -20,13 +25,29 @@ public class PineapplePnl extends JPanel {
 
 	private void initGUI() {
 
-		setLayout(new GridBagLayout());
 		setBackground(new Color(252, 243, 218));
+		
+		pineapplePnl = new JPanel();
+		pineapplePnl.setLayout(new GridBagLayout());
+		pineapplePnl.setBackground(new Color(252, 243, 218));
 		GridBagConstraints gbc;
 
+		JLabel ingredientsLbl = new JLabel("INGREDIENTES");
+		ingredientsLbl.setFont(new Font("Arial", Font.BOLD, 16));
+		gbc = new GridBagConstraints();
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.weightx = 0;
+		gbc.weighty = 0;
+		gbc.anchor = GridBagConstraints.WEST;
+		gbc.fill = GridBagConstraints.NONE;
+		gbc.insets = new Insets(1, 1, 1, 1);
+		pineapplePnl.add(ingredientsLbl, gbc);
+
 		String ingredients;
-		ingredients = "INGREDIENTES:\n" +
-				"* 4 tazas de harina cernida\n" +
+		ingredients = "* 4 tazas de harina cernida\n" +
 				"* 2 ½ tazas de azúcar\n" +
 				"* 4 panelitas de mantequilla\n" +
 				"* 12 huevos\n" +
@@ -43,7 +64,7 @@ public class PineapplePnl extends JPanel {
 
 		gbc = new GridBagConstraints();
 		gbc.gridx = 0; // Coordenada x en el grid
-		gbc.gridy = 0; // Coordenada y en el grid
+		gbc.gridy = 1; // Coordenada y en el grid
 		gbc.gridwidth = 1; // Cantidad de celdas de ancho
 		gbc.gridheight = 1; // Cantidad de celdas de alto
 		gbc.weightx = 0; // Peso de la celda en horizontal
@@ -53,11 +74,39 @@ public class PineapplePnl extends JPanel {
 		gbc.insets = new Insets(1, 1, 1, 1); // Espacios que reserva el
 												// componente entre el borde del
 												// objeto y la celda
-		add(ingredientsTxt, gbc);
+		pineapplePnl.add(ingredientsTxt, gbc);
+		
+		JLabel cakeImg = new JLabel();
+		cakeImg.setIcon(new ImageIcon(getClass().getResource("images/slide13.png")));
+		gbc = new GridBagConstraints();
+		gbc.gridx = 1;
+		gbc.gridy = 1;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.weightx = 0;
+		gbc.weighty = 0;
+		gbc.anchor = GridBagConstraints.CENTER;
+		gbc.fill = GridBagConstraints.NONE;
+		gbc.insets = new Insets(1, 1, 1, 1);
+		pineapplePnl.add(cakeImg, gbc);
+		
+		JLabel procedureLbl = new JLabel("PROCEDIMIENTO");
+		procedureLbl.setFont(new Font("Arial", Font.BOLD, 16));
+		gbc = new GridBagConstraints();
+		gbc.gridx = 0;
+		gbc.gridy = 2;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.weightx = 0;
+		gbc.weighty = 0;
+		gbc.anchor = GridBagConstraints.WEST;
+		gbc.fill = GridBagConstraints.NONE;
+		gbc.insets = new Insets(1, 1, 1, 1);
+		pineapplePnl.add(procedureLbl, gbc);
+
 
 		String procedure;
-		procedure = "Preparación:\n" +
-				"Batir la mantequilla con el azúcar hasta que esté bien cremosa, agregar las amarillas de huevo y continuar batiendo.\n" +
+		procedure = "Batir la mantequilla con el azúcar hasta que esté bien cremosa, agregar las amarillas de huevo y continuar batiendo.\n" +
 				"Se agrega la leche y el almíbar alternando con el harina y el polvo royal. Batir las claras de huevo a punto de nieve y\n" +
 				"agregarle en forma envolvente la mezcla. Aparte preparar un caramelo hirviendo el azúcar y el agua, hasta obtener un\n" +
 				"color ligeramente dorado. Colocar en un molde redondo donde se distribuyen de forma decorativa las piñas con las guindas\n" +
@@ -69,15 +118,15 @@ public class PineapplePnl extends JPanel {
 
 		gbc = new GridBagConstraints();
 		gbc.gridx = 0;
-		gbc.gridy = 1;
-		gbc.gridwidth = 1;
+		gbc.gridy = 3;
+		gbc.gridwidth = 2;
 		gbc.gridheight = 1;
 		gbc.weightx = 0;
 		gbc.weighty = 0;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.fill = GridBagConstraints.NONE;
 		gbc.insets = new Insets(1, 1, 1, 1);
-		add(procedureTxt, gbc);
+		pineapplePnl.add(procedureTxt, gbc);
 
 		JButton btnBack = new JButton("Volver");
 		btnBack.addActionListener(new ActionListener() {
@@ -87,28 +136,56 @@ public class PineapplePnl extends JPanel {
 		});
 		gbc = new GridBagConstraints();
 		gbc.gridx = 0;
-		gbc.gridy = 2;
-		gbc.gridwidth = 1;
+		gbc.gridy = 4;
+		gbc.gridwidth = 2;
 		gbc.gridheight = 1;
 		gbc.weightx = 0;
 		gbc.weighty = 0;
 		gbc.anchor = GridBagConstraints.CENTER;
 		gbc.fill = GridBagConstraints.NONE;
 		gbc.insets = new Insets(1, 1, 1, 1);
-		add(btnBack, gbc);
+		pineapplePnl.add(btnBack, gbc);
 		
 		JButton btnHelp = new JButton("¿Que hacer si...?");
+		btnHelp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnHelpClicked();
+			}
+		});
 		gbc = new GridBagConstraints();
 		gbc.gridx = 0;
-		gbc.gridy = 2;
-		gbc.gridwidth = 1;
+		gbc.gridy = 4;
+		gbc.gridwidth = 2;
 		gbc.gridheight = 1;
 		gbc.weightx = 0;
 		gbc.weighty = 0;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.fill = GridBagConstraints.NONE;
 		gbc.insets = new Insets(1, 1, 1, 1);
-		add(btnHelp, gbc);
+		pineapplePnl.add(btnHelp, gbc);
+		
+		add(pineapplePnl);
+		
+		pineappleAskPnl = new PineappleAskPnl();
+		pineappleAskPnl.setVisible(false);
+		pineappleAskPnl.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pineappleAskPnlBackClicked();
+			}
+		});
+		add(pineappleAskPnl);
+	}
+
+	public void pineappleAskPnlBackClicked() {
+		pineapplePnl.setVisible(true);
+		pineappleAskPnl.setVisible(false);
+		repaint();
+	}
+
+	private void btnHelpClicked() {
+		pineapplePnl.setVisible(false);
+		pineappleAskPnl.setVisible(true);
+		repaint();
 	}
 
 	private void btnBackClicked() {

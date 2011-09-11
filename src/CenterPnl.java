@@ -225,4 +225,28 @@ public class CenterPnl extends JPanel {
 		}
 	}
 
+	public BreadPnl getBreadPnl() {
+		return breadPnl;
+	}
+	
+	public ThreeMilkPnl getThreeMilkPnl(){
+		return threeMilkPnl;
+	}
+	
+	public ChocolatePnl getChocolatePnl(){
+		return chocolatePnl;
+	}
+	
+	public PumpkinPnl getPumpkinPnl(){
+		return pumpkinPnl;
+	}
+	
+	public HomeMadePnl getHomemadePnl(){
+		return homemadePnl;
+	}
+	
+	public PineapplePnl getPineapplePnl(){
+		return pineapplePnl;
+	}
+
 }

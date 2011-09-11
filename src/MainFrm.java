@@ -48,7 +48,7 @@ public class MainFrm extends JFrame {
 		setIconImage(new ImageIcon(getClass().getResource("/images/cake.png"))
 				.getImage());
 		
-		setSize(1000, 600);
+		setSize(1000, 620);
 
 	}
 
@@ -80,12 +80,19 @@ public class MainFrm extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				topBar.setWelcome();
 				center.setMainPnl();
+				center.getBreadPnl().breadAskPnlBackClicked();
+				center.getThreeMilkPnl().threeMilkAskPnlBackClicked();
+				center.getChocolatePnl().chocolateAskPnlBackClicked();
+				center.getPumpkinPnl().pumpkinAskPnlBackClicked();
+				center.getHomemadePnl().homemadeAskPnlBackClicked();
+				center.getPineapplePnl().pineappleAskPnlBackClicked();
 			}
 		});
 		init.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I,
 				ActionEvent.CTRL_MASK));
 		init.setMnemonic(KeyEvent.VK_I);
 		options.add(init);
+		options.addSeparator();
 		JMenuItem exit = new JMenuItem("Salir");
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
