@@ -257,7 +257,9 @@ public class ThreeMilkAskPnl extends JPanel {
 		gbc.insets = new Insets(1, 1, 1, 1);
 		add(l5, gbc);
 		
-		JButton btnBack = new JButton("Volver");
+		JButton btnBack = new JButton(new ImageIcon(getClass().getResource("/images/back.png")));
+		btnBack.setBorderPainted(false);
+		btnBack.setBackground(new Color(252, 243, 218));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnBackClicked();

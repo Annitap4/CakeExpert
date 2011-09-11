@@ -128,7 +128,9 @@ public class PineapplePnl extends JPanel {
 		gbc.insets = new Insets(1, 1, 1, 1);
 		pineapplePnl.add(procedureTxt, gbc);
 
-		JButton btnBack = new JButton("Volver");
+		JButton btnBack = new JButton(new ImageIcon(getClass().getResource("/images/back.png")));
+		btnBack.setBorderPainted(false);
+		btnBack.setBackground(new Color(252, 243, 218));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnBackClicked();
@@ -146,7 +148,9 @@ public class PineapplePnl extends JPanel {
 		gbc.insets = new Insets(1, 1, 1, 1);
 		pineapplePnl.add(btnBack, gbc);
 		
-		JButton btnHelp = new JButton("¿Que hacer si...?");
+		JButton btnHelp = new JButton(new ImageIcon(getClass().getResource("/images/help.png")));
+		btnHelp.setBorderPainted(false);
+		btnHelp.setBackground(new Color(252, 243, 218));
 		btnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnHelpClicked();
